@@ -25,8 +25,6 @@ painmonit_sensors = ["Bvp", "Eda_E4", "Resp", "Eda_RB", "Ecg", "Emg"]
 painmonit_sensor_to_index = {j:i for i, j in enumerate(painmonit_sensors)}
 # Name of all biovid sensors
 biovid_sensors = ["time", "gsr", "ecg", "emg_trapezius", "emg_corrugator", "emp_zygomaticus"]
-# Subjects to skip in UzL data
-uzl_faulty = ["S_01", "S_22", "S_23", "S_24", "S_25", "S_33", "S_58"]
 # Biosignals directory for the BioVid dataset - can be 'biosignals_filtered' or 'biosignals_raw'
 biosignals_dir = "biosignals_raw"
 

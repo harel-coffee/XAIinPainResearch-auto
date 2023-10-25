@@ -7,8 +7,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 from tensorflow.python.keras.utils.np_utils import to_categorical
 
-from config import window_secs, painmonit_sensors, baseline_temp, sampling_rate_painmonit, num_repetitions_uzl, uzl_faulty, biosignals_dir
-from scripts.data_handling import get_initials
+from config import window_secs, painmonit_sensors, baseline_temp, sampling_rate_painmonit, num_repetitions_uzl, biosignals_dir
 
 #-------------------------------------------------------------------------------------------------------
 # Functions PainMonit (UzL) dataset
@@ -124,8 +123,6 @@ def create_np_painmonit(original_dir = Path("datasets", "painmonit", "synchronis
 	print("Create painmonit np dataset...")
 
 	file_names = glob.glob(str(Path(original_dir, "*.csv")))
-	# filter for faulty subjects
-	file_names = [i for i in file_names if get_initials(i) not in uzl_faulty]
 
 	# sort the list - lexicographically
 	file_names.sort()
